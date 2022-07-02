@@ -20,6 +20,9 @@ use App\Models\Role;
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
 
 Route::get('/home', function () {
     return view('admin.dashboard');
