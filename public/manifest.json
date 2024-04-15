@@ -1,0 +1,17 @@
+{
+    "name": "NASCO",
+    "short_name": "NG",
+    "start_url": "/",
+    "background_color": "#6777ef",
+    "description": "NASCO Group",
+    "display": "fullscreen",
+    "theme_color": "#6777ef",
+    "icons": [
+        {
+            "src": "logo-144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

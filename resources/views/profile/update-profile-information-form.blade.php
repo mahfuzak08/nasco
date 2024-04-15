@@ -1,18 +1,17 @@
 <x-form-section submit="updateProfileInformation">
-    <x-slot name="title">
-        {{ __('Profile Information') }}
-    </x-slot>
-
-    <x-slot name="description">
-        {{ __('Update your account\'s profile information and email address.') }}
-    </x-slot>
-
     <x-slot name="form">
+        <x-slot name="title">
+            {{ __('Profile Information') }}
+        </x-slot>
+    
+        <x-slot name="description">
+            {{ __('Update your account\'s profile information and email address.') }}
+        </x-slot>
         <!-- Profile Photo -->
         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
             <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 sm:col-span-4">
                 <!-- Profile Photo File Input -->
-                <input type="file" id="photo" class="hidden"
+                <input type="file" class="hidden"
                             wire:model.live="photo"
                             x-ref="photo"
                             x-on:change="
@@ -38,7 +37,7 @@
                     </span>
                 </div>
 
-                <x-secondary-button class="mt-2 me-2" type="button" x-on:click.prevent="$refs.photo.click()">
+                <x-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
                     {{ __('Select A New Photo') }}
                 </x-secondary-button>
 
@@ -58,7 +57,21 @@
             <x-input id="name" type="text" class="mt-1 block w-full" wire:model="state.name" required autocomplete="name" />
             <x-input-error for="name" class="mt-2" />
         </div>
+        
+        <!-- Mobile -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="mobile" value="{{ __('Mobile') }}" />
+            <x-input id="mobile" type="text" class="mt-1 block w-full" wire:model="state.mobile" required autocomplete="mobile" />
+            <x-input-error for="mobile" class="mt-2" />
+        </div>
 
+        <!-- Address -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="address" value="{{ __('Address') }}" />
+            <x-input id="address" type="text" class="mt-1 block w-full" wire:model="state.address" autocomplete="address" />
+            <x-input-error for="address" class="mt-2" />
+        </div>
+        
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="email" value="{{ __('Email') }}" />
@@ -84,7 +97,7 @@
     </x-slot>
 
     <x-slot name="actions">
-        <x-action-message class="me-3" on="saved">
+        <x-action-message class="mr-3" on="saved">
             {{ __('Saved.') }}
         </x-action-message>
 
