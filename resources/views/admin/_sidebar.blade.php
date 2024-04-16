@@ -39,6 +39,20 @@
       </a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#pages" aria-expanded="false" aria-controls="report">
+        <span class="menu-title">{{__('Pages')}}</span>
+        <i class="menu-arrow"></i>
+        <i class="mdi mdi-bank menu-icon"></i>
+      </a>
+      <div class="collapse" id="pages">
+        <ul class="nav flex-column sub-menu">
+          @foreach($pages as $row)
+          <li class="nav-item"> <a class="nav-link" href="{{!empty($row->value) ? route($row->value) : '/'}}">{{__($row->page_name)}}</a></li>
+          @endforeach
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
       <form class="nav-link" method="POST" action="{{ route('logout') }}" x-data>
         @csrf
         <x-responsive-nav-link href="{{ route('logout') }}" @click.prevent="$root.submit();" class="menu-title">
