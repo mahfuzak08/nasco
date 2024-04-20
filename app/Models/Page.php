@@ -12,7 +12,7 @@ class Page extends Model
     use HasFactory;
     use LogsActivity;
 
-    protected $fillable = ['page_name','section_name','key','value','user_id', 'status', 'authorize_by'];
+    protected $fillable = ['page_name','section_name','key','value','value2','value3','user_id', 'status', 'authorize_by'];
 
     public function getActivitylogOptions(): LogOptions
     {

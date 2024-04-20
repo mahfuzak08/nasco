@@ -6,50 +6,42 @@
                   <h6 class="footer-title-29">Contact Us</h6>
                   <ul>
                       <li><p><span class="fa fa-map-marker"></span> Estate Business, #32841 block, #221DRS Real estate business building, UK.</p></li>
-                      <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> +(21)-255-999-8888</a></li>
-                      <li><a href="mailto:corporate-mail@support.com" class="mail"><span class="fa fa-envelope-open-o"></span> corporate-mail@support.com</a></li>
+                      <li><a href="tel:{{$data['topnav'][0]}}"><span class="fa fa-phone"></span> {{$data['topnav'][0]}}</a></li>
+                      <li><a href="mailto:{{$data['topnav'][1]}}" class="mail"><span class="fa fa-envelope-open-o"></span> {{$data['topnav'][1]}}</a></li>
                   </ul>
                   <div class="main-social-footer-29">
-                      <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
-                      <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
-                      <a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
-                      <a href="#google-plus" class="google-plus"><span class="fa fa-google-plus"></span></a>
-                      <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
+                    @foreach($data['social_media_link'] as $row)
+                      <a href="{{$row['value3']}}" class="{{$row['value']}}"><span class="fa fa-{{$row['value']}}"></span></a>
+                    @endforeach
                   </div>
               </div>
               <div class="footer-list-29 footer-2">
                   <ul>
                       <h6 class="footer-title-29">Featured Links</h6>
-                      <li><a href="#">Graduation</a></li>
-                      <li><a href="#">Admissions</a></li>
-                      <li><a href="#">Book Store</a></li>
-                      <li><a href="#">International</a></li>
-                      <li><a href="#">Courses</a></li>
+                      @foreach($data['featured_link'] as $row)
+                      <li><a href="{{$row['value3']}}">{{$row['value']}}</a></li>
+                      @endforeach
                   </ul>
               </div>
               <div class="footer-list-29 footer-3">
-                 
                   <h6 class="footer-title-29">Newsletter </h6>
-          <form action="#" class="subscribe" method="post">
-            <input type="email" name="email" placeholder="Email" required="">
-            <button><span class="fa fa-envelope-o"></span></button>
-          </form>
-          <p>Subscribe and get our weekly newsletter</p>
-          <p>We'll never share your email address</p>
-        
+                  <form action="#" class="subscribe" method="post">
+                    <input type="email" name="email" placeholder="Email" required="">
+                    <button><span class="fa fa-envelope-o"></span></button>
+                  </form>
+                  <p>{{$data['newsletter'][0]['value']}}</p>
               </div>
               <div class="footer-list-29 footer-4">
                   <ul>
                       <h6 class="footer-title-29">Quick Links</h6>
-                      <li><a href="{{route('home')}}">Home</a></li>
-                      <li><a href="{{route('about')}}">About</a></li>
-                      <li><a href="{{route('products')}}">Products</a></li>
-                      <li><a href="{{route('contact')}}">Contact</a></li>
+                      @foreach($data['quick_link'] as $row)
+                      <li><a href="{{$row['value3']=='/' ? '/' : route($row['value3'])}}">{{$row['value']}}</a></li>
+                      @endforeach
                   </ul>
               </div>
           </div>
           <div class="d-grid grid-col-2 bottom-copies">
-              <p class="copy-footer-29">© 2024 All rights reserved | Designed by <a href="https://absoft-bd.com">ABSoft</a></p>
+              <p class="copy-footer-29">© 2024 All rights reserved by {{config('app.name')}} | Designed by <a href="https://absoft-bd.com">ABSoft</a></p>
                <ul class="list-btm-29">
                       <li><a href="#link">Privacy policy</a></li>
                       <li><a href="#link">Terms of service</a></li>

@@ -3,22 +3,116 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Page;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('welcome');
+        $data = array();
+        $data['topnav'] = Page::where('section_name', 'Top Nav')->pluck('value');
+        $data['logo'] = Page::where('section_name', 'Logo')->pluck('value2');
+        $data['slider'] = Page::where('section_name', 'Slider')
+                                ->orderBy('key')
+                                ->get(['value', 'value2'])
+                                ->toArray();
+        $data['features_block'] = Page::where('section_name', 'Features Block')
+                                ->get(['key', 'value', 'value3'])
+                                ->toArray();
+        $data['recent_project'] = Page::where('section_name', 'Recent Project')
+                                ->get(['key', 'value', 'value2', 'value3'])
+                                ->toArray();
+        $data['ceo'] = Page::where('section_name', 'CEO Say')
+                                ->get(['key', 'value', 'value2', 'value3'])
+                                ->toArray();
+        $data['no_of_project'] = Page::where('section_name', 'No of Project')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['client_list'] = Page::where('section_name', 'Client List')
+                                ->orderBy('key')
+                                ->get(['value', 'value2', 'value3'])
+                                ->toArray();
+        $data['featured_link'] = Page::where('section_name', 'Featured Link')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['quick_link'] = Page::where('section_name', 'Quick Link')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['social_media_link'] = Page::where('section_name', 'Social Media Link')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['newsletter'] = Page::where('section_name', 'Newsletter')
+                                ->get(['value'])
+                                ->toArray();
+        return view('welcome', compact('data'));
     }
     
     public function about(){
-        return view('about');
+        $data = array();
+        $data['topnav'] = Page::where('section_name', 'Top Nav')->pluck('value');
+        $data['logo'] = Page::where('section_name', 'Logo')->pluck('value2');
+        $data['featured_link'] = Page::where('section_name', 'Featured Link')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['quick_link'] = Page::where('section_name', 'Quick Link')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['social_media_link'] = Page::where('section_name', 'Social Media Link')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['newsletter'] = Page::where('section_name', 'Newsletter')
+                                ->get(['value'])
+                                ->toArray();
+        return view('about', compact('data'));
     }
     
     public function products(){
-        return view('products');
+        $data = array();
+        $data['topnav'] = Page::where('section_name', 'Top Nav')->pluck('value');
+        $data['logo'] = Page::where('section_name', 'Logo')->pluck('value2');
+        $data['featured_link'] = Page::where('section_name', 'Featured Link')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['quick_link'] = Page::where('section_name', 'Quick Link')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['social_media_link'] = Page::where('section_name', 'Social Media Link')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['newsletter'] = Page::where('section_name', 'Newsletter')
+                                ->get(['value'])
+                                ->toArray();
+        return view('products', compact('data'));
     }
     
     public function contact(){
-        return view('contact');
+        $data = array();
+        $data['topnav'] = Page::where('section_name', 'Top Nav')->pluck('value');
+        $data['logo'] = Page::where('section_name', 'Logo')->pluck('value2');
+        $data['featured_link'] = Page::where('section_name', 'Featured Link')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['quick_link'] = Page::where('section_name', 'Quick Link')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['social_media_link'] = Page::where('section_name', 'Social Media Link')
+                                ->orderBy('key')
+                                ->get(['value', 'value3'])
+                                ->toArray();
+        $data['newsletter'] = Page::where('section_name', 'Newsletter')
+                                ->get(['value'])
+                                ->toArray();
+        return view('contact', compact('data'));
     }
 }

@@ -22,8 +22,8 @@ Author URL: WWW.ABSOFT-BD.COM
 		<div class="container">
 	<header class="row top-menu-top">
 		<div class="accounts col-md-9 col-6">
-				<li class="top_li"><span class="fa fa-phone"></span><a href="tel:+142 5897555">+142 5897555</a> </li>
-				<li class="top_li1"><span class="fa fa-envelope-o"></span> <a href="mailto:education-mail@support.com" class="mail"> info@example.com</a>	</li>
+				<li class="top_li"><span class="fa fa-phone"></span><a href="tel:{{$data['topnav'][0]}}">{{$data['topnav'][0]}}</a> </li>
+				<li class="top_li1"><span class="fa fa-envelope-o"></span> <a href="mailto:{{$data['topnav'][1]}}" class="mail"> {{$data['topnav'][1]}}</a>	</li>
 		</div>
 		<div class="social-top col-md-3 col-6">
 			<a href="#" class="btn btn-secondary btn-theme4">CAREERS</a>
@@ -39,7 +39,7 @@ Author URL: WWW.ABSOFT-BD.COM
       <!--<a class="navbar-brand" href="#"><img src="assets/images/logo.png" width="40px" > NASCO</a>-->
       <!-- if logo is image enable this   -->
       <a class="navbar-brand" href="##">
-          <img src="assets/images/logo.png" alt="Your logo" title="Your logo" style="height:35px;" />
+          <img src="{{asset($data['logo'][0])}}" alt="Your logo" title="Your logo" style="height:35px;" />
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

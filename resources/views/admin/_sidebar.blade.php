@@ -33,6 +33,12 @@
       </a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="/" target="_blank">
+        <span class="menu-title">{{ __('Home') }}</span>
+        <i class="mdi mdi-home menu-icon"></i>
+      </a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="{{ route('dashboard') }}">
         <span class="menu-title">{{ __('Dashboard') }}</span>
         <i class="mdi mdi-home menu-icon"></i>
@@ -47,7 +53,7 @@
       <div class="collapse" id="pages">
         <ul class="nav flex-column sub-menu">
           @foreach($pages as $row)
-          <li class="nav-item"> <a class="nav-link" href="{{!empty($row->value) ? route($row->value) : '/'}}">{{__($row->page_name)}}</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ URL::route('page', ['pid' => $row->id]) }}">{{__($row->page_name)}}</a></li>
           @endforeach
         </ul>
       </div>

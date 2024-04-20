@@ -15,4 +15,6 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/page', [AdminController::class, 'page'])->name('page');
+    Route::post('/save-section', [AdminController::class, 'save_section'])->name('save-section');
 });

@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('section_name')->nullable();
             $table->string('key')->nullable();
             $table->longText('value')->nullable();
+            $table->longText('value2')->nullable();
+            $table->longText('value3')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
