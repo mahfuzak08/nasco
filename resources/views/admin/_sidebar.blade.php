@@ -58,6 +58,14 @@
         </ul>
       </div>
     </li>
+    @if(Auth::user()->access_lavel > 666)
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('user-manage') }}">
+        <span class="menu-title">{{ __('User Management') }}</span>
+        <i class="mdi mdi-home menu-icon"></i>
+      </a>
+    </li>
+    @endif
     <li class="nav-item">
       <form class="nav-link" method="POST" action="{{ route('logout') }}" x-data>
         @csrf

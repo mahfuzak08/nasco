@@ -32,6 +32,9 @@ class HomeController extends Controller
                                 ->orderBy('key')
                                 ->get(['value', 'value2', 'value3'])
                                 ->toArray();
+        $data['address'] = Page::where('section_name', 'Contact Address')
+                                ->get(['key', 'value'])
+                                ->toArray();
         $data['featured_link'] = Page::where('section_name', 'Featured Link')
                                 ->orderBy('key')
                                 ->get(['value', 'value3'])
@@ -54,6 +57,9 @@ class HomeController extends Controller
         $data = array();
         $data['topnav'] = Page::where('section_name', 'Top Nav')->pluck('value');
         $data['logo'] = Page::where('section_name', 'Logo')->pluck('value2');
+        $data['address'] = Page::where('section_name', 'Contact Address')
+                                ->get(['key', 'value'])
+                                ->toArray();
         $data['featured_link'] = Page::where('section_name', 'Featured Link')
                                 ->orderBy('key')
                                 ->get(['value', 'value3'])
@@ -76,6 +82,9 @@ class HomeController extends Controller
         $data = array();
         $data['topnav'] = Page::where('section_name', 'Top Nav')->pluck('value');
         $data['logo'] = Page::where('section_name', 'Logo')->pluck('value2');
+        $data['address'] = Page::where('section_name', 'Contact Address')
+                                ->get(['key', 'value'])
+                                ->toArray();
         $data['featured_link'] = Page::where('section_name', 'Featured Link')
                                 ->orderBy('key')
                                 ->get(['value', 'value3'])
@@ -98,6 +107,9 @@ class HomeController extends Controller
         $data = array();
         $data['topnav'] = Page::where('section_name', 'Top Nav')->pluck('value');
         $data['logo'] = Page::where('section_name', 'Logo')->pluck('value2');
+        $data['address'] = Page::where('section_name', 'Contact Address')
+                                ->get(['key', 'value'])
+                                ->toArray();
         $data['featured_link'] = Page::where('section_name', 'Featured Link')
                                 ->orderBy('key')
                                 ->get(['value', 'value3'])
@@ -111,6 +123,9 @@ class HomeController extends Controller
                                 ->get(['value', 'value3'])
                                 ->toArray();
         $data['newsletter'] = Page::where('section_name', 'Newsletter')
+                                ->get(['value'])
+                                ->toArray();
+        $data['map'] = Page::where('section_name', 'Map link')
                                 ->get(['value'])
                                 ->toArray();
         return view('contact', compact('data'));

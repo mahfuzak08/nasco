@@ -5,7 +5,7 @@
               <div class="footer-list-29 footer-1">
                   <h6 class="footer-title-29">Contact Us</h6>
                   <ul>
-                      <li><p><span class="fa fa-map-marker"></span> Estate Business, #32841 block, #221DRS Real estate business building, UK.</p></li>
+                      <li><p><span class="fa fa-map-marker"></span> {{$data['address'][0]['value']}}</p></li>
                       <li><a href="tel:{{$data['topnav'][0]}}"><span class="fa fa-phone"></span> {{$data['topnav'][0]}}</a></li>
                       <li><a href="mailto:{{$data['topnav'][1]}}" class="mail"><span class="fa fa-envelope-open-o"></span> {{$data['topnav'][1]}}</a></li>
                   </ul>
