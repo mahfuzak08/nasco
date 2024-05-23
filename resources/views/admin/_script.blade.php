@@ -17,6 +17,15 @@
 <!-- End custom js for this page -->
 <script src="{{ asset('/sw.js') }}"></script>
 <script src="{{asset('admin/assets/js/jquery-ui.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/ckeditor.js')}}"></script>
+<script>
+    if(document.querySelector( '#editor' )){
+        ClassicEditor.create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        });
+    }
+</script>
 <script>
    if ("serviceWorker" in navigator) {
         // Register a service worker hosted at the root of the

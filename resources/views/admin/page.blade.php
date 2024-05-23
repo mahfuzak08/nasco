@@ -24,8 +24,8 @@
                 </ul>
               </nav> --}}
             </div>
-            <div class="row">
-              <div class="col-md-6 col-12">
+            <div class="row" style="background: #FFFFFF">
+              <div class="col-md-4 col-12">
                 <div class="accordion" id="accordionExample">
                   @foreach($sectiongroup as $sec)
                   @if($sec->section_name !== 'main')
@@ -49,16 +49,16 @@
                             @foreach($section as $row)
                               @if($sec->section_name == $row->section_name)
                               <tr>
-                                <td> {{ $row->key }} </td>
+                                <td> {{ substr($row->key, 0, 10 ) }} </td>
                                 <td> 
-                                  {{ substr($row->value, 0, 20 )}} 
+                                  {{ substr($row->value, 0, 10 )}} 
                                   @if($row->value2)
                                   <br>
-                                  {{ substr($row->value2, 0, 20) }} 
+                                  {{ substr($row->value2, 0, 10) }} 
                                   @endif
                                   @if($row->value3)
                                   <br>
-                                  {{ substr($row->value3, 0, 20) }} 
+                                  {{ substr($row->value3, 0, 10) }} 
                                   @endif
                                 </td>
                                 <td>
@@ -77,7 +77,7 @@
                   @endforeach
                 </div>
               </div>
-              <div class="col-md-6 col-12">
+              <div class="col-md-8 col-12">
                 <div class="">
                   <form class="forms-sample" method="POST" action="{{ route('save-section') }}" enctype="multipart/form-data">
                     @csrf
@@ -103,10 +103,11 @@
                         <input type="text" name="key" placeholder="{{__('Key')}}" value="{{!empty($edititem->id) ? $edititem->key : ''}}" required class="form-control" id="input8">
                       </div>
                     </div>
-                    <div class="form-group form-group-margin-bottom-off row">
-                      <label for="input9" class="col-sm-3 col-form-label">{{__('Text')}}</label>
+                    <div class="form-group row">
+                      <label for="editor" class="col-sm-3 col-form-label">{{__('Text')}}</label>
                       <div class="col-sm-9">
-                        <input type="text" name="value" placeholder="{{__('Text')}}" value="{{!empty($edititem->id) ? $edititem->value : ''}}" class="form-control" id="input9">
+                        <div id="editor">{{!empty($edititem->id) ? $edititem->value : ''}}</div>
+                        {{-- <input type="text" name="value" placeholder="{{__('Text')}}" value="{{!empty($edititem->id) ? $edititem->value : ''}}" class="form-control" id="input9"> --}}
                       </div>
                     </div>
                     <div class="form-group form-group-margin-bottom-off row">
@@ -119,10 +120,31 @@
                     <div class="form-group form-group-margin-bottom-off row">
                       <input type="file" name="photo" class="file-upload-default">
                       <div class="input-group col-sm-12">
-                        <input type="text" class="form-control file-upload-info" value="{{!empty($edititem->id) ? $edititem->value2 : ''}}" disabled="" placeholder="Upload Image">
-                        <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
-                        </span>
+                          @if(! empty($edititem->id) && !empty($edititem->value2))
+                            <div class="col-sm-6">
+                              <img src="{{$edititem->value2}}" style="max-width:300px; max-height: 150px">
+                              @php
+                              $imagePath = public_path($edititem->value2);
+                              list($width, $height) = getimagesize($imagePath);
+                              // echo $width. " = ". $height;
+                              @endphp
+                            </div>
+                            <div class="col-sm-3">
+                              Width = {{$width}} px <br>
+                              Height = {{$height}} px <br>
+                              <input type="text" class="form-control file-upload-info" value="{{$edititem->value2}}" disabled="" placeholder="Upload Image">
+                            </div>
+                            <div class="col-sm-3">
+                              <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                              </span>
+                            </div>
+                          @else
+                            <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
+                            <span class="input-group-append">
+                              <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                            </span>
+                          @endif
                       </div>
                     </div>
                     <br />
