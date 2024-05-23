@@ -8,8 +8,26 @@ Author URL: WWW.ABSOFT-BD.COM
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <title>{{config('app.name')}} | Home </title>
+    <!-- Open Graph Meta Tags for Website Preview -->
+    <meta property="og:title" content="{{config('app.name')}}">
+    <meta property="og:description" content="{{config('app.name')}}">
+    <meta property="og:image" content="{{asset($data['logo'][0])}}">
+    <meta property="og:url" content="{{asset($data['logo'][0])}}">
+
+    <!-- Twitter Card Meta Tags for Twitter Preview -->
+    <meta name="twitter:card" content="{{asset($data['logo'][0])}}">
+    <meta name="twitter:title" content="{{config('app.name')}}">
+    <meta name="twitter:description" content="{{config('app.name')}}">
+    <meta name="twitter:image" content="{{asset($data['logo'][0])}}">
+
+    <!-- Other Meta Tags (optional) -->
+    <meta name="description" content="{{config('app.name')}}">
+    <meta name="keywords" content="{{config('app.name')}}">
+    
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <link href="assets/css/fonts.css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style-starter.css">
   </head>
