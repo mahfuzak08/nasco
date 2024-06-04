@@ -93,8 +93,8 @@
                     <div class="form-group form-group-margin-bottom-off row">
                       <label for="sectionname" class="col-sm-3 col-form-label">{{__('Section Name')}}</label>
                       <div class="col-sm-9">
-                        <input type="hidden" id="sectionname1" value="{{!empty($edititem->id) ? $edititem->section_name : ''}}">
-                        <input type="text" id="sectionname" name="section_name" required class="form-control" value="{{!empty($edititem->id) ? $edititem->section_name : ''}}">
+                        <input type="hidden" id="sectionname1" name="section_name" required value="{{!empty($edititem->id) ? $edititem->section_name : ''}}">
+                        <input type="text" id="sectionname" disabled class="form-control" value="{{!empty($edititem->id) ? $edititem->section_name : ''}}">
                       </div>
                     </div>
                     <div class="form-group form-group-margin-bottom-off row">
