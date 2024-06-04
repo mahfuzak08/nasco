@@ -25,7 +25,7 @@
               </nav> --}}
             </div>
             <div class="row" style="background: #FFFFFF">
-              <div class="col-md-4 col-12">
+              <div class="col-md-5 col-12">
                 <div class="accordion" id="accordionExample">
                   @foreach($sectiongroup as $sec)
                   @if($sec->section_name !== 'main')
@@ -77,7 +77,7 @@
                   @endforeach
                 </div>
               </div>
-              <div class="col-md-8 col-12">
+              <div class="col-md-7 col-12">
                 <div class="">
                   <form class="forms-sample" id="save_section_form" method="POST" action="{{ route('save-section') }}" enctype="multipart/form-data">
                     @csrf
