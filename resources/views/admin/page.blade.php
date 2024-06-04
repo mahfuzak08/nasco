@@ -106,8 +106,8 @@
                     <div class="form-group row">
                       <label for="editor" class="col-sm-3 col-form-label">{{__('Text')}}</label>
                       <div class="col-sm-9">
-                        <div id="editor">{{!empty($edititem->id) ? $edititem->value : ''}}</div>
-                        {{-- <input type="text" name="value" placeholder="{{__('Text')}}" value="{{!empty($edititem->id) ? $edititem->value : ''}}" class="form-control" id="input9"> --}}
+                        {{-- <div id="editor">{{!empty($edititem->id) ? $edititem->value : ''}}</div> --}}
+                        <input type="text" name="value" placeholder="{{__('Text')}}" value="{{!empty($edititem->id) ? $edititem->value : ''}}" class="form-control" id="input9">
                       </div>
                     </div>
                     <div class="form-group form-group-margin-bottom-off row">
