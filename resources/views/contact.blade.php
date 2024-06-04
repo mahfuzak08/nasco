@@ -29,6 +29,15 @@
                         </div>
                         <div class="cont-add">
                            <div class="cont-add-rgt">
+                                <p><i><b>{{$data['address'][2]['key']}}</i></b></p>
+                                <p class="contact-text-sub">{{$data['address'][2]['value']}}</p>
+                            </div>
+                            <div class="cont-add-lft">
+                                <span class="fa fa-map-marker" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="cont-add">
+                           <div class="cont-add-rgt">
                                 <p><i><b>{{$data['address'][1]['key']}}</i></b></p>
                                 <p class="contact-text-sub">{{$data['address'][1]['value']}}</p>
                             </div>
@@ -83,7 +92,7 @@
                  <!-- contact form -->
                  <div class="contacts12-main col-lg-8 mt-lg-0 mt-5">
                    
-                    <form action="https://sendmail..com/submitForm" method="post" class="main-input">
+                    <form action="#" method="" class="main-input">
                         <div class="top-inputs d-grid">
                             <input type="text" placeholder="Name" name="w3lName" id="w3lName" required="">
                             <input type="email" name="email" placeholder="Email" id="w3lSender" required="">
