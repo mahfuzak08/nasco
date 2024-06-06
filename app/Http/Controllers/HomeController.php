@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Page;
+use App\Mail\SampleMail;
 
 class HomeController extends Controller
 {
@@ -129,5 +131,12 @@ class HomeController extends Controller
                                 ->get(['value'])
                                 ->toArray();
         return view('contact', compact('data'));
+    }
+    
+    public function send_email(Request $request){
+        $name = "Funny Coder";
+        Mail::to('mahfuzak08@gmail.com')->send(new SampleMail($name));
+        flash()->addSuccess('Email send successfully.');
+        return redirect('contact');
     }
 }

@@ -92,7 +92,8 @@
                  <!-- contact form -->
                  <div class="contacts12-main col-lg-8 mt-lg-0 mt-5">
                    
-                    <form action="#" method="" class="main-input">
+                    <form action="{{route('send-email')}}" method="POST" class="main-input">
+                        @csrf
                         <div class="top-inputs d-grid">
                             <input type="text" placeholder="Name" name="w3lName" id="w3lName" required="">
                             <input type="email" name="email" placeholder="Email" id="w3lSender" required="">

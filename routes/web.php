@@ -9,6 +9,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/products', [HomeController::class, 'products'])->name('products');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/send_email', [HomeController::class, 'send_email'])->name('send-email');
 
 Route::middleware([
     'auth:sanctum',
