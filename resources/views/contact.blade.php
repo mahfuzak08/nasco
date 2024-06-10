@@ -98,7 +98,7 @@
                             <input type="text" placeholder="Name" name="w3lName" id="w3lName" required="">
                             <input type="email" name="email" placeholder="Email" id="w3lSender" required="">
                         </div>
-                        <input type="text" placeholder="Phone Number" name="w3lName" id="w3lName" required="">
+                        <input type="text" placeholder="Phone Number" name="w3lphone" id="w3lName" required="">
                         <textarea placeholder="Message" name="w3lMessage" id="w3lMessage" required=""></textarea>
                         <div class="text-right">
                             <button type="submit" class="btn btn-theme2">Submit Now</button>
