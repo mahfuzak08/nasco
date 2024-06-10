@@ -135,7 +135,7 @@ class HomeController extends Controller
     
     public function send_email(Request $request){
         $name = "Funny Coder";
-        Mail::to('mahfuzak08@gmail.com')->send(new SampleMail($request->all()));
+        Mail::to('akramul@nascobd.com')->send(new SampleMail($request->all()));
         flash()->addSuccess('Email send successfully.');
         return redirect('contact');
     }

@@ -8,7 +8,7 @@
 
     <style>
         p {
-            font-size: 12px;
+            font-size: 14px;
         }
 
         .signature {
@@ -26,6 +26,7 @@
         <p>Phone Number: <b>{{$data['w3lphone']}}</b></p>
         <p>Body: <b>{{$data['w3lMessage']}}</b></p>
     </p>
+    <p>Please contact with his/ her if needed. </p>
     Thank you...
 </div>
 </body>
