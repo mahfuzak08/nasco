@@ -19,7 +19,7 @@
 <body>
 <div>
     <p>Hey Admin,</p>
-    <p>We have receive a query from our website. Here is the details:</p>
+    <p>We have received a query from our website. Here is the details:</p>
     <p class="signature">
         <p>Name: <b>{{$data['w3lName']}}</b></p>
         <p>Email: <b>{{$data['email']}}</b></p>
