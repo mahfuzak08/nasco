@@ -28,7 +28,7 @@ class SampleMail extends Mailable
     {
         return new Envelope(
             subject: 'Website Query Mail',
-            bcc: ['mahfuzak08@gmail.com']
+            // bcc: ['mahfuzak08@gmail.com']
         );
     }
 
