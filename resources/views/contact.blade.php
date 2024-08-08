@@ -1,4 +1,10 @@
 @include('layouts._head')
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+    function enableSubmitBtn(){
+        document.getElementById("submitbtn").disabled = false;
+    }
+</script>
 <section class="w3l-contact-breadcrum">
   <div class="breadcrum-bg py-sm-5 py-4">
     <div class="container py-lg-3">
@@ -100,8 +106,10 @@
                         </div>
                         <input type="text" placeholder="Phone Number" name="w3lphone" id="w3lphone" required="">
                         <textarea placeholder="Message" name="w3lMessage" id="w3lMessage" required=""></textarea>
+                        <div class="g-recaptcha" data-sitekey="6LdvGSIqAAAAAA5oI5t9hxoQIOzhTNM0R_istb5S" data-callback="enableSubmitBtn"></div>
+                        <br/>
                         <div class="text-right">
-                            <button type="submit" class="btn btn-theme2">Submit Now</button>
+                            <button type="submit" id="submitbtn" disabled="disabled" class="btn btn-theme2">Submit Now</button>
                         </div>
                     </form>
                 </div>
