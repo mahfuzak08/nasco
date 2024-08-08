@@ -106,7 +106,7 @@
                         </div>
                         <input type="text" placeholder="Phone Number" name="w3lphone" id="w3lphone" required="">
                         <textarea placeholder="Message" name="w3lMessage" id="w3lMessage" required=""></textarea>
-                        <div class="g-recaptcha" data-sitekey="6LdvGSIqAAAAAA5oI5t9hxoQIOzhTNM0R_istb5S" data-callback="enableSubmitBtn"></div>
+                        <div class="g-recaptcha" data-sitekey="{{$data['site_key']}}" data-callback="enableSubmitBtn"></div>
                         <br/>
                         <div class="text-right">
                             <button type="submit" id="submitbtn" disabled="disabled" class="btn btn-theme2">Submit Now</button>
