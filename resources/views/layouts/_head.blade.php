@@ -70,16 +70,31 @@ Author URL: WWW.ABSOFT-BD.COM
             <a class="nav-link" href="{{route('home')}}">Home</a>
           </li>
           <li class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
-			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="{{route('about')}}">About</a>
-				<a class="dropdown-item" href="{{route('about')}}#mission">Mission</a>
-				<a class="dropdown-item" href="{{route('about')}}#vision">Vision</a>
-			</div>
-		  </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('products')}}">Products</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{route('about')}}">About</a>
+              <a class="dropdown-item" href="{{route('about')}}#mission">Mission</a>
+              <a class="dropdown-item" href="{{route('about')}}#vision">Vision</a>
+            </div>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="ProductsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+            <div class="dropdown-menu" aria-labelledby="ProductsDropdown">
+              <a class="dropdown-item" href="{{route('products')}}">Transformer</a>
+              <a class="dropdown-item" href="{{route('products')}}#mission">Instrument Transformer</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Voltage Regulator (AVR/SVR)</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">High Voltage Switchgear</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Medium Voltage Switchgear</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Low Voltage Switchgear</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Gas Insulated Switchgear (GIS)</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Busbar Trunking System (BBT)</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Switch &amp; Isolator</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Switch &amp; Isolator</a>
+            </div>
+          </li>
+          {{-- <li class="nav-item">
+            <a class="nav-link" href="{{route('products')}}">Products</a>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link" href="{{route('contact')}}">Contact</a>
           </li>
