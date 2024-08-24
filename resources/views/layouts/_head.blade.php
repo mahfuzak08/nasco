@@ -80,16 +80,28 @@ Author URL: WWW.ABSOFT-BD.COM
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="ProductsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
             <div class="dropdown-menu" aria-labelledby="ProductsDropdown">
-              <a class="dropdown-item" href="{{route('products')}}">Transformer</a>
-              <a class="dropdown-item" href="{{route('products')}}#mission">Instrument Transformer</a>
-              <a class="dropdown-item" href="{{route('products')}}#vision">Voltage Regulator (AVR/SVR)</a>
-              <a class="dropdown-item" href="{{route('products')}}#vision">High Voltage Switchgear</a>
-              <a class="dropdown-item" href="{{route('products')}}#vision">Medium Voltage Switchgear</a>
-              <a class="dropdown-item" href="{{route('products')}}#vision">Low Voltage Switchgear</a>
-              <a class="dropdown-item" href="{{route('products')}}#vision">Gas Insulated Switchgear (GIS)</a>
-              <a class="dropdown-item" href="{{route('products')}}#vision">Busbar Trunking System (BBT)</a>
-              <a class="dropdown-item" href="{{route('products')}}#vision">Switch &amp; Isolator</a>
-              <a class="dropdown-item" href="{{route('products')}}#vision">Switch &amp; Isolator</a>
+              <h6 style="border-bottom: 1px solid #999;padding: 4px 25px;background: #999;">Korean Brand Products</h6>
+              <a class="dropdown-item" href="{{route('products')}}">Miniature Circuit Breaker (MCB)</a>
+              <a class="dropdown-item" href="{{route('products')}}#mission">MoldedCase Circuit Breaker (MCCB)</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Earth Leakage Circuit Breaker (ELCB)</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Air Circuit Breaker (ACB)</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Vacuum Circuit Breaker (VCB)</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Load Break Switch (LBS)</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Magnetic Contactor (M/C)</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Thermal Overload Relay (TOR)</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Auto Transfer switch (ATS)</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Power Capacitor</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Power Factor Controller (PFC)</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Diesel and GAS Generator</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Generator Spare Parts</a>
+              <h6 style="border-bottom: 1px solid #999;padding: 4px 25px;background: #999;">Japanese Brand Products</h6>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Frequency Inverter Mitsubishi</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">SCADA</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">PCL</a>
+              <h6 style="border-bottom: 1px solid #999;padding: 4px 25px;background: #999;">Chinese Brand Products</h6>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Wall Switch-Socket</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Diesel and GAS Generator</a>
+              <a class="dropdown-item" href="{{route('products')}}#vision">Generator Spare Parts</a>
             </div>
           </li>
           {{-- <li class="nav-item">
