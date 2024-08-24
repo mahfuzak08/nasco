@@ -14,6 +14,9 @@
       font-weight: 700;
       margin-top: 50px;
    }
+   input{
+      margin-bottom: 10px;
+   }
 </style>
 <section class="w3l-content-with-photo-4">
   <div id="content-with-photo4-block" class="pt-5">
@@ -42,6 +45,7 @@
                  <li><span class="fa fa-check"></span>Conscious on quality product and service, not for tradition.</li>
                  <li><span class="fa fa-check"></span>Participatory management practice with Friendly, cooperative working environment.</li>
               </ul>
+              <a class="btn btn-secondary btn-theme2 mt-3" data-toggle="modal" data-target="#myModal" href="#">Send Inquiry</a>
            </div>
         </div>
         <div class="cwp4-two row">
@@ -62,6 +66,7 @@
                 <li><span class="fa fa-check"></span>33/11 kV; 33/11 kV; 11/.415 kV products are manufactured mainly but effective solutions are provided if the client requires them.</li>
                 <li><span class="fa fa-check"></span>Cooling Material: Mineral oil and synthetic ester oil</li>
              </ul>
+             <a class="btn btn-secondary btn-theme2 mt-3" data-toggle="modal" data-target="#myModal" href="#">Send Inquiry</a>
           </div>
           <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
               <img src="https://www.energypac.com.bd/public/images/products/product_image/10_05_2020_16_01_12_9.jpg" class="img-fluid" alt="" />
@@ -70,4 +75,46 @@
      </div>
   </div>
 </section>
+<div id="myModal" class="modal fade" role="dialog">
+   <div class="modal-dialog modal-lg">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">Fill out the form and we will get back to you shortly.</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </div>
+         <div class="modal-body w3l-contacts-12">
+            <form class="main-input">
+               <div class="row">
+                  <div class="col-12 col-lg-6">
+                     <input type="text" name="name" id="name" placeholder="Name *" class="bg-transparent border-color-medium-dark-gray medium-input">
+                  </div>
+                  <div class="col-12 col-lg-6">
+                     <input type="text" name="phone" id="phone" placeholder="Phone number with country code" class="bg-transparent border-color-medium-dark-gray medium-input">
+                  </div>
+                  <div class="col-12 col-lg-6">
+                     <input type="text" name="email" id="email" placeholder="E-mail *" class="bg-transparent border-color-medium-dark-gray medium-input">
+                  </div>
+                  <div class="col-12 col-lg-6">
+                     <input type="text" name="company" id="email" placeholder="Company/Organization*" class="bg-transparent border-color-medium-dark-gray medium-input">
+                  </div>
+                  <div class="col-12 col-lg-12">
+                     <input type="text" name="product" id="name" value="POWER TRANSFORMER" class="bg-transparent border-color-medium-dark-gray medium-input ">
+                  </div>
+                  <div class="col-12">
+                     <textarea name="message" id="comment" placeholder="Write your query" rows="7" class="bg-transparent border-color-medium-dark-gray medium-textarea"></textarea>
+                  </div>
+                  <div class="col-12">
+                     <span class="text-extra-small">* We don't share your personal info with anyone.</span>
+                  </div>
+               </div>
+            </form>
+         </div>
+         <div class="modal-footer">
+            <button id="edit12" type="button" class="btn btn-secondary btn-theme2 mt-3" data-target="#myModal12">Send Now</button>
+         </div>
+      </div>
+   </div>
+</div>
 @include('layouts._foot')
