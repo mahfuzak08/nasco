@@ -1,4 +1,10 @@
 @include('layouts._head')
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+    function enableSubmitBtn(){
+        document.getElementById("submitbtn").disabled = false;
+    }
+</script>
 <section class="w3l-about-breadcrum">
   <div class="breadcrum-bg py-sm-5 py-4">
     <div class="container py-lg-3">
@@ -21,57 +27,47 @@
 <section class="w3l-content-with-photo-4">
   <div id="content-with-photo4-block" class="pt-5">
      <div class="container py-md-5">
+         @foreach($data['product'] as $key=>$row)
         <div class="cwp4-two row">
            <div class="cwp4-text col-lg-12">
-              <span class="product_name">POWER TRANSFORMER</span>
-              <p>Transformers are one of the primary components for the transmission and distribution of electrical energy. The scope of transformer types starts with generator transformers and ends with distribution transformers. Transformers which are directly connected to the generator of the power stations are called generator transformers. Energypac’s standard range goes up to 520MVA and 400kV. The connection between the different high voltage system levels is made via network transformers. Energypac is able to offer network transformers up to 520MVA, 400kV.</p>
+              <span class="product_name">{{$row->name}}</span>
+              <p>{{$row->details}}</p>
               <br><br>
            </div>
            <div class="cwp4-text col-lg-6">
-              <img src="https://www.energypac.com.bd/public/images/products/product_image/10_06_2021_09_10_20_Cam%2001.92.png" class="img-fluid" alt="" />
-           </div>
-           <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
-              <h5 id="mission">Technical Specifications and Features</h5>
-              <ul class="cont-4">
-                 <li><span class="fa fa-check"></span>POWER TRANSFORMERS UP TO 36kV, 2.5MVA – 47MVA</li>
-                 <li><span class="fa fa-check"></span>POWER TRANSFORMERS UP TO 400kV, 520MVA</li>
-                 <li><span class="fa fa-check"></span>GENERATOR STEP-UP (GSU) TRANSFORMERS UP TO 400kV, 520MVA</li>
-                 <li><span class="fa fa-check"></span>AUTO TRANSFORMERS/ GRID CONNECTED TRANSFORMERS UP TO 400kV, 520MVA</li>
-                 <li><span class="fa fa-check"></span>Designed to withstand short circuit forces acts radially and axially during faults.</li>
-                 <li><span class="fa fa-check"></span>High efficiency is ensured by implementing the technology of magnetic material and CU conductor.</li>
-                 <li><span class="fa fa-check"></span>Thermally upgraded insulation paper(Class A) results in Long</li>
-                 <li><span class="fa fa-check"></span>High withstanding capability against TOV, lightning strikes, switching phenomenon, over flux conditions.</li>
-                 <li><span class="fa fa-check"></span>Leakproof, pressure, and vacuum tested as per standard.</li>
-                 <li><span class="fa fa-check"></span>Conscious on quality product and service, not for tradition.</li>
-                 <li><span class="fa fa-check"></span>Participatory management practice with Friendly, cooperative working environment.</li>
-              </ul>
-              <a class="btn btn-secondary btn-theme2 mt-3" data-toggle="modal" data-target="#myModal" href="#">Send Inquiry</a>
-           </div>
+               @if($key%2==0)
+                  <img src="{{$row->image}}" class="img-fluid" alt="" />
+               @else
+                  <h5 id="vision">Technical Specifications and Features</h5>
+                  <ul class="cont-4">
+                     @foreach(explode('**@**', $row->specifications) as $k=>$r)
+                     <li><span class="fa fa-check"></span>{{$r}}</li>
+                     @endforeach
+                     @foreach(explode('**@**', $row->features) as $k=>$r)
+                     <li><span class="fa fa-check"></span>{{$r}}</li>
+                     @endforeach
+                  </ul>
+                  <a class="btn btn-secondary btn-theme2 mt-3" data-toggle="modal" data-target="#myModal" href="#">Send Inquiry</a>
+               @endif
+            </div>
+            <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
+               @if($key%2==0)
+                  <h5 id="vision">Technical Specifications and Features</h5>
+                  <ul class="cont-4">
+                     @foreach(explode('**@**', $row->specifications) as $k=>$r)
+                     <li><span class="fa fa-check"></span>{{$r}}</li>
+                     @endforeach
+                     @foreach(explode('**@**', $row->features) as $k=>$r)
+                     <li><span class="fa fa-check"></span>{{$r}}</li>
+                     @endforeach
+                  </ul>
+                  <a class="btn btn-secondary btn-theme2 mt-3" data-toggle="modal" data-target="#myModal" href="#">Send Inquiry</a>
+               @else
+                  <img src="{{$row->image}}" class="img-fluid" alt="" />
+               @endif
+            </div>
         </div>
-        <div class="cwp4-two row">
-          <div class="cwp4-text col-lg-12">
-            <span class="product_name">DISTRIBUTION TRANSFORMER-OIL FILLED</span>
-            <p>Transformers from 5kVA to 2500kVA and up to 36kV on the high voltage side and 3.6kV on the low voltage side are referred to as distribution transformers. In the last step, they distribute the electrical energy to the consumers by feeding from the high-voltage into the low-voltage distribution network. These are designed either as liquid-filled or as dry-type transformers. </p>
-            <br><br>
-          </div>
-          <div class="cwp4-text col-lg-6">
-              <h5 id="vision">Technical Specifications and Features</h5>
-              <ul class="cont-4">
-                <li><span class="fa fa-check"></span>OIL TYPE DISTRIBUTION TRANSFORMERS</li>
-                <li><span class="fa fa-check"></span>DRY TYPE DISTRIBUTION TRANSFORMERS</li>
-                <li><span class="fa fa-check"></span>Power rating from 5kVA to 2500kVA</li>
-                <li><span class="fa fa-check"></span>Type Test certification for 5000 kVA Transformer</li>
-                <li><span class="fa fa-check"></span>Available with both OCTC and OLTC</li>
-                <li><span class="fa fa-check"></span>Cooling Type: ONAN, ONAF both can be provided</li>
-                <li><span class="fa fa-check"></span>33/11 kV; 33/11 kV; 11/.415 kV products are manufactured mainly but effective solutions are provided if the client requires them.</li>
-                <li><span class="fa fa-check"></span>Cooling Material: Mineral oil and synthetic ester oil</li>
-             </ul>
-             <a class="btn btn-secondary btn-theme2 mt-3" data-toggle="modal" data-target="#myModal" href="#">Send Inquiry</a>
-          </div>
-          <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
-              <img src="https://www.energypac.com.bd/public/images/products/product_image/10_05_2020_16_01_12_9.jpg" class="img-fluid" alt="" />
-          </div>
-        </div>
+        @endforeach
      </div>
   </div>
 </section>
@@ -108,11 +104,14 @@
                   <div class="col-12">
                      <span class="text-extra-small">* We don't share your personal info with anyone.</span>
                   </div>
+                  <div class="col-12">
+                     <div class="g-recaptcha" data-sitekey="{{$data['site_key']}}" data-callback="enableSubmitBtn"></div>
+                 </div>                 
                </div>
             </form>
          </div>
          <div class="modal-footer">
-            <button id="edit12" type="button" class="btn btn-secondary btn-theme2 mt-3" data-target="#myModal12">Send Now</button>
+            <button id="submitbtn" disabled="disabled" type="button" class="btn btn-secondary btn-theme2 mt-3" data-target="#myModal12">Send Now</button>
          </div>
       </div>
    </div>

@@ -45,6 +45,18 @@
       </a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="{{ route('category') }}">
+        <span class="menu-title">{{ __('Product Category') }}</span>
+        <i class="mdi mdi-sitemap menu-icon"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('product') }}">
+        <span class="menu-title">{{ __('All Product') }}</span>
+        <i class="mdi mdi-sitemap menu-icon"></i>
+      </a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#pages" aria-expanded="false" aria-controls="report">
         <span class="menu-title">{{__('Pages')}}</span>
         <i class="menu-arrow"></i>

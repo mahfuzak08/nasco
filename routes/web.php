@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SettingsController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -19,6 +21,12 @@ Route::middleware([
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/page', [AdminController::class, 'page'])->name('page');
     Route::post('/save-section', [AdminController::class, 'save_section'])->name('save-section');
+    Route::get('/category', [CategoryController::class, 'index'])->name('category');
+    Route::get('/addCat', [CategoryController::class, 'create'])->name('addCat');
+    Route::post('/category-store', [CategoryController::class, 'store'])->name('category-store');
+    Route::get('/product', [ProductController::class, 'index'])->name('product');
+    Route::get('/addProduct', [ProductController::class, 'create'])->name('addProduct');
+    Route::post('/productStore', [ProductController::class, 'store'])->name('productStore');
 
     Route::get('/user_manage', [SettingsController::class, 'user_manage'])->name('user-manage');
     Route::get('/add_new_user', [SettingsController::class, 'open_user_form'])->name('add-new-user');

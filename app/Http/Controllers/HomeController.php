@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Category;
+use App\Models\Product;
 use App\Models\Page;
 use App\Mail\SampleMail;
 
@@ -13,6 +15,8 @@ class HomeController extends Controller
         $data = array();
         $data['topnav'] = Page::where('section_name', 'Top Nav')->pluck('value');
         $data['logo'] = Page::where('section_name', 'Logo')->pluck('value2');
+        $data['categories'] = Category::all();
+        // dd($data);
         $data['slider'] = Page::where('section_name', 'Slider')
                                 ->orderBy('key')
                                 ->get(['value', 'value2'])
@@ -59,6 +63,7 @@ class HomeController extends Controller
         $data = array();
         $data['topnav'] = Page::where('section_name', 'Top Nav')->pluck('value');
         $data['logo'] = Page::where('section_name', 'Logo')->pluck('value2');
+        $data['categories'] = Category::all();
         $data['address'] = Page::where('section_name', 'Contact Address')
                                 ->get(['key', 'value'])
                                 ->toArray();
@@ -84,6 +89,9 @@ class HomeController extends Controller
         $data = array();
         $data['topnav'] = Page::where('section_name', 'Top Nav')->pluck('value');
         $data['logo'] = Page::where('section_name', 'Logo')->pluck('value2');
+        $data['categories'] = Category::all();
+        $data['product'] = Product::where('cat_id', request()->input('cid'))->get();
+        // dd($data['product']);
         $data['address'] = Page::where('section_name', 'Contact Address')
                                 ->get(['key', 'value'])
                                 ->toArray();
@@ -102,6 +110,7 @@ class HomeController extends Controller
         $data['newsletter'] = Page::where('section_name', 'Newsletter')
                                 ->get(['value'])
                                 ->toArray();
+        $data['site_key'] = env('SITE_KEY');
         return view('products', compact('data'));
     }
     
@@ -109,6 +118,7 @@ class HomeController extends Controller
         $data = array();
         $data['topnav'] = Page::where('section_name', 'Top Nav')->pluck('value');
         $data['logo'] = Page::where('section_name', 'Logo')->pluck('value2');
+        $data['categories'] = Category::all();
         $data['address'] = Page::where('section_name', 'Contact Address')
                                 ->get(['key', 'value'])
                                 ->toArray();
