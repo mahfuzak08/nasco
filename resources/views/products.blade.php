@@ -8,7 +8,7 @@
 <section class="w3l-about-breadcrum">
   <div class="breadcrum-bg py-sm-5 py-4">
     <div class="container py-lg-3">
-      <h2 style="color: #fdc800;">Product Details (This page is under construction)</h2>
+      <h2 style="color: #fdc800;">Product Details</h2>
       <p><a href="index.html">Home</a> &nbsp; / &nbsp; Products</p>
     </div>
   </div>
