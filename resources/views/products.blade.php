@@ -81,7 +81,8 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
          </div>
          <div class="modal-body w3l-contacts-12">
-            <form class="main-input">
+            <form class="main-input" action="{{ route('send-inquiry') }}" method="POST">
+               @csrf
                <div class="row">
                   <div class="col-12 col-lg-6">
                      <input type="text" name="name" id="name" placeholder="Name *" class="bg-transparent border-color-medium-dark-gray medium-input">
@@ -108,10 +109,10 @@
                      <div class="g-recaptcha" data-sitekey="{{$data['site_key']}}" data-callback="enableSubmitBtn"></div>
                  </div>                 
                </div>
+               <div class="modal-footer">
+                  <button id="submitbtn" disabled="disabled" type="button" class="btn btn-secondary btn-theme2 mt-3" data-target="#myModal12">Send Now</button>
+               </div>
             </form>
-         </div>
-         <div class="modal-footer">
-            <button id="submitbtn" disabled="disabled" type="button" class="btn btn-secondary btn-theme2 mt-3" data-target="#myModal12">Send Now</button>
          </div>
       </div>
    </div>

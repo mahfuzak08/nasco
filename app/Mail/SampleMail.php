@@ -28,7 +28,7 @@ class SampleMail extends Mailable
     {
         return new Envelope(
             subject: 'Website Query Mail',
-            // bcc: ['mahfuzak08@gmail.com']
+            bcc: ['mahfuzak08@gmail.com']
         );
     }
 
@@ -38,7 +38,7 @@ class SampleMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.test-email',
+            view: $this->data['product'] ? 'mail.product-inquiry' : 'mail.test-email',
             with: ['data' => $this->data]
         );
     }

@@ -162,4 +162,22 @@ class HomeController extends Controller
         }
         return redirect('contact');
     }
+    
+    public function send_inquiry(Request $request){
+        $name = "Funny Coder";
+        if(isset($_POST["g-recaptcha-response"]) && !empty($_POST["g-recaptcha-response"]) ){
+            $secret_key = env('SECRET_KEY');
+            $verify_response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret_key.'&response='.$_POST["g-recaptcha-response"]);
+            $response = json_decode($verify_response);
+            if($response->success){
+                Mail::to('mansur.nascogroup@gmail.com')->send(new SampleMail($request->all()));
+                flash()->addSuccess('Email send successfully.');    
+            }else{
+                flash()->addSuccess('Recaptcha response false.');
+            }
+        }else{
+            flash()->addSuccess('Recaptcha error.');
+        }
+        return redirect('index');
+    }
 }
