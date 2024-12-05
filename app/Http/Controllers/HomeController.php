@@ -178,6 +178,6 @@ class HomeController extends Controller
         }else{
             flash()->addSuccess('Recaptcha error.');
         }
-        return redirect('index');
+        return redirect()->route('home');
     }
 }
