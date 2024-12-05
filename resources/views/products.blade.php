@@ -110,7 +110,7 @@
                  </div>                 
                </div>
                <div class="modal-footer">
-                  <button id="submitbtn" disabled="disabled" type="button" class="btn btn-secondary btn-theme2 mt-3" data-target="#myModal12">Send Now</button>
+                  <button id="submitbtn" disabled="disabled" type="submit" class="btn btn-secondary btn-theme2 mt-3" data-target="#myModal12">Send Now</button>
                </div>
             </form>
          </div>
