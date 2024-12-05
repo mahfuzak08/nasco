@@ -47,7 +47,7 @@
                      <li><span class="fa fa-check"></span>{{$r}}</li>
                      @endforeach
                   </ul>
-                  <a class="btn btn-secondary btn-theme2 mt-3" data-toggle="modal" data-target="#myModal" href="#">Send Inquiry</a>
+                  <a class="btn btn-secondary btn-theme2 mt-3" data-toggle="modal" data-target="#myModal" data-product="{{$row->name}}" href="#">Send Inquiry</a>
                @endif
             </div>
             <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
