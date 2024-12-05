@@ -61,7 +61,7 @@
                      <li><span class="fa fa-check"></span>{{$r}}</li>
                      @endforeach
                   </ul>
-                  <a class="btn btn-secondary btn-theme2 mt-3" data-toggle="modal" data-target="#myModal" href="#">Send Inquiry</a>
+                  <a class="btn btn-secondary btn-theme2 mt-3" data-toggle="modal" data-target="#myModal" data-product="{{$row->name}}" href="#">Send Inquiry</a>
                @else
                   <img src="{{$row->image}}" class="img-fluid" alt="" />
                @endif
@@ -118,3 +118,12 @@
    </div>
 </div>
 @include('layouts._foot')
+<script>
+   // Attach event listener to modal show event
+   $('#myModal').on('show.bs.modal', function (event) {
+       var button = $(event.relatedTarget); // Button that triggered the modal
+       var productName = button.data('product'); // Extract product name from data-product attribute
+       var modal = $(this);
+       modal.find('input[name="product"]').val(productName); // Set the product name in the input field
+   });
+</script>
